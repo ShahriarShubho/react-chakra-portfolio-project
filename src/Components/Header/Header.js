@@ -2,8 +2,10 @@ import React from 'react';
 import { Button } from '@chakra-ui/button';
 import { useColorMode } from '@chakra-ui/color-mode'
 import { Image } from '@chakra-ui/image';
-import { Stack, Circle, Flex, Box, Text } from '@chakra-ui/layout';
+import Icon from '@chakra-ui/icon'
+import {HStack, Stack, Circle, Flex, Box, Text } from '@chakra-ui/layout';
 import { useMediaQuery } from '@chakra-ui/media-query';
+import { FaFacebookF, FaGoogle, FaSpotify, FaShopify } from 'react-icons/fa'
 
 
 const Header = () => {
@@ -12,6 +14,7 @@ const Header = () => {
 
     const [isNotSmallerScreen] = useMediaQuery("(min-width:600px)");
     return (
+        <>
         <Stack>
         <Circle position="absolute" bg="blue.100" opacity="0.2"
             w="300px" h="300px" alignSelf="flex-end" zIndex="-1" />
@@ -32,8 +35,14 @@ const Header = () => {
                 backgroundColor="transparent" boxShadow="lg"
                 boxSize="300px" src='https://i.ibb.co/Csw98QS/IMG-20190310-091931-01-removebg-preview.jpg' />
         </Flex>
-
     </Stack>
+    <HStack spacing="24">
+            <Icon as={FaFacebookF} boxSize="50" />
+            <Icon as={FaGoogle} boxSize="50" />
+            <Icon as={FaSpotify} boxSize="50" />
+            <Icon as={FaShopify} boxSize="50" />
+        </HStack>
+        </>
     );
 };
 
